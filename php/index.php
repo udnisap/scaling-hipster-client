@@ -47,7 +47,8 @@ try {
 } catch (Exception $exc) {
     $ret['status'] = array('type' => 'error', 'code' => $exc->getCode(), 'message' => $exc->getMessage());
 } 
-http_response_code($ret['status']['code']);
-echo json_encode($ret, JSON_PRETTY_PRINT);
+header('X-PHP-Response-Code:', true, $ret['status']['code']);
+//http_response_code($ret['status']['code']);
+echo json_encode($ret);
 
 ?>
