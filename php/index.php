@@ -35,6 +35,7 @@ try {
 
             case "status":
                 $ret['results'] = shell_exec('top -b -n 1 2>&1 ');
+		die($ret['results']);
                 break;
 
             default:
