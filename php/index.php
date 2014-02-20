@@ -30,7 +30,7 @@ try {
 		 if(move_uploaded_file($_FILES["file"]["tmp_name"],
 		      "scripts/" . $_FILES["file"]["name"])){
 		
-			chmod("scripts/" . $_FILES["file"]["name"], 0777);
+			chmod("scripts/" . $_FILES["file"]["name"], 0755);
 			echo "Stored in: " . "scripts/" . $_FILES["file"]["name"];
 		}
                 break;
